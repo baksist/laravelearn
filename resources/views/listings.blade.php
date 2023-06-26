@@ -7,7 +7,7 @@
 @foreach($listings as $listing) {{-- foreach directive --}}
     {{-- looks like laravel will just ignore this if array is empty --}}
    <h2>
-        <a href="/listing/{{$listing['id']}}">
+        <a href="/listings/{{$listing['id']}}">
             {{$listing['title']}}
         </a>
     </h2>
