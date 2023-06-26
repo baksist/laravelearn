@@ -24,12 +24,11 @@ Route::get('/', function () {
 });
 
 // get single listing
-Route::get('/listings/{id}', function ($id) {
+Route::get('/listings/{listing}', function (Listing $listing) {
     return view('listing', [
-        'heading' => 'Listing #' . $id,
-        'listing' => Listing::find($id)
+        'listing' => $listing
     ]);
-})->where('id', '[0-9]+');
+});
 
 
 // Route::get('/hello', function () {
