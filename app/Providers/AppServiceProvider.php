@@ -20,5 +20,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        // Model::unguard(); -- don't restrict mass assignment of propeties
     }
 }
