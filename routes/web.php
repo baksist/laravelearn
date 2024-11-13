@@ -20,6 +20,8 @@ use App\Models\Listing;
 // get all listings 
 Route::get('/', [ListingController::class,'index']);
 
+Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
+
 // store listing data
 Route::post('/listings', [ListingController::class,'store'])->middleware('auth');
 
@@ -49,6 +51,8 @@ Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 Route::get('/login', [UserController::class, 'show_login'])->name('login')->middleware('guest');
 
 Route::post('/users/login', [UserController::class, 'login'])->middleware('guest');
+
+
 
 // Route::get('/hello', function () {
 //     return response("Hello world", 200) 
