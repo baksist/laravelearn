@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
@@ -37,6 +38,17 @@ Route::delete('listings/{listing}', [ListingController::class, 'destroy']);
 // get single listing
 Route::get('/listings/{listing}', [ListingController::class,'show']);
 
+// show registration form
+Route::get('/register', [UserController::class, 'create']);
+
+// register user
+Route::post('/users', [UserController::class, 'store']);
+
+Route::post('/logout', [UserController::class, 'logout']);
+
+Route::get('/login', [UserController::class, 'show_login']);
+
+Route::post('/users/login', [UserController::class, 'login']);
 
 // Route::get('/hello', function () {
 //     return response("Hello world", 200) 
